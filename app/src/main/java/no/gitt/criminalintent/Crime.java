@@ -1,6 +1,9 @@
 package no.gitt.criminalintent;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -31,8 +34,13 @@ public class Crime {
         this.mTitle = mTitle;
     }
 
-    public Date getDate() {
-        return mDate;
+    /**
+     * Solution to chapter 8 challenge. Modified getDate() method to provide
+     * a more readable date format.
+     */
+    public String getDate() {
+        DateFormat df = new SimpleDateFormat("EEEE, MMM d, yyyy", Locale.ENGLISH);
+        return df.format(mDate);
     }
 
     public void setDate(Date date) {
